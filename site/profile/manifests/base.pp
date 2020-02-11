@@ -6,7 +6,7 @@ class profile::base {
     include common::packages::install
 
     notify { 'Message':
-        name     => hiera(message,"No message found")
+        name     => lookup(message,undef,undef,"No message found")
     }
 }
 

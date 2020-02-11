@@ -12,7 +12,7 @@
 #
 
 class profile::puppetagent(
-    $puppetmaster=hiera('puppet_server','puppet')
+    $puppetmaster=lookup('puppet_server',undef,undef,'puppet')
 ) {
 
   filebucket { 'puppetmaster':

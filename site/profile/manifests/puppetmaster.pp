@@ -25,7 +25,7 @@
 #
 
 class profile::puppetmaster(
-    $use_puppetdb=hiera('profiles::puppetmaster::use_puppetdb',false)
+    $use_puppetdb=lookup('profiles::puppetmaster::use_puppetdb',undef,undef,false)
 ) {
 
   class { 'puppetserver':
@@ -43,7 +43,7 @@ class profile::puppetmaster(
   $confdir = $::settings::confdir
   file { "${confdir}/autosign.conf":
     ensure  => file,
-    content => epp('profile/puppetmaster/autosign.conf.epp',{ 'autosign_hosts' => hiera('profiles::puppetmaster::autosign_hosts',[])}),
+    content => epp('profile/puppetmaster/autosign.conf.epp',{ 'autosign_hosts' => lookup('profiles::puppetmaster::autosign_hosts',undef,undef,[])}),
   }
 
   class { '::puppetserver::hiera::eyaml':
@@ -54,7 +54,7 @@ class profile::puppetmaster(
   if $use_puppetdb {
 
     class { 'puppetdb::master::config':
-      puppetdb_server             => hiera('puppetdb_host'),
+      puppetdb_server             => lookup('puppetdb_host'),
       manage_routes               => true,
       manage_storeconfigs         => true,
       manage_report_processor     => true,

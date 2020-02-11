@@ -30,8 +30,8 @@
 #
 
 class profile::puppetmaster_standalone(
-    $use_puppetdb=hiera('profiles::puppetmaster::use_puppetdb',false),
-    $use_puppetboard=hiera('profiles::puppetmaster::use_puppetboard',false)
+    $use_puppetdb=lookup('profiles::puppetmaster::use_puppetdb',undef,undef,false),
+    $use_puppetboard=lookup('profiles::puppetmaster::use_puppetboard',undef,undef,false)
 ) {
 
   apt::source { 'puppetlabs':
@@ -81,7 +81,7 @@ class profile::puppetmaster_standalone(
       }
 
       class { 'puppetboard::apache::vhost':
-        vhost_name => hiera('profiles::puppetmaster::puppetboard_vhost',$::fqdn)
+        vhost_name => lookup('profiles::puppetmaster::puppetboard_vhost',undef,undef,$::fqdn)
       }
     }
   }
