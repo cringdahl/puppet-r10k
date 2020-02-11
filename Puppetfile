@@ -17,6 +17,7 @@ mod 'puppetlabs/inifile'
 
 mod 'puppet/puppetboard'
 mod "puppetlabs/vcsrepo"
+mod "puppet/python"
 mod "stahnma/epel"
-mod "stankevich/python"
+
 
