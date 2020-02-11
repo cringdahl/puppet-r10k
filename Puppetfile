@@ -8,7 +8,7 @@ mod 'puppetlabs/puppetserver_gem'
 
 mod 'herculesteam/augeasproviders_core'
 mod 'camptocamp/augeas'
-mod 'camptocamp/puppetserver'
+mod 'puppet/puppetserver'
 
 mod 'puppetlabs/firewall'
 mod 'puppetlabs/puppetdb'
