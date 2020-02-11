@@ -20,7 +20,6 @@
 #
 
 class common::packages::install( $packages = lookup('packages', { merge => hash }) ) {
-    validate_hash( $packages )
     if ( $packages ) {
         create_resources( package, $packages )
     }
