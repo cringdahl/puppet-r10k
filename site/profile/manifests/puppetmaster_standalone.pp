@@ -47,6 +47,12 @@ class profile::puppetmaster_standalone(
     require => Class['puppetserver::install'],
   }
 
+  $confdir = $::settings::confdir
+  file { "${confdir}/autosign.conf":
+    ensure  => file,
+    content => epp('profile/puppetmaster/autosign.conf.epp',{ 'autosign_hosts' => lookup('profiles::puppetmaster::autosign_hosts',undef,undef,[])}),
+  }
+
   if $use_puppetdb {
     class { 'puppetdb': }
 
