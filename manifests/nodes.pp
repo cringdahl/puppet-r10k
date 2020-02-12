@@ -5,13 +5,13 @@ node 'default' {
 }
 
 node 'puppetmaster' {
-  include role::master
+  include role::master_standalone
 }
 
-node 'puppetdb' {
-  include role::puppetdb
-}
+#node 'puppetdb' {
+#  include role::puppetdb
+#}
 
-node 'puppetreports' {
-  include role::puppetreports
-}
+#node 'puppetreports' {
+#  include role::puppetreports
+#}
