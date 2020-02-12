@@ -34,14 +34,6 @@ class profile::puppetmaster_standalone(
     $use_puppetboard=lookup('profiles::puppetmaster::use_puppetboard',undef,undef,false)
 ) {
 
-  apt::source { 'puppetlabs':
-    location   => 'http://apt.puppetlabs.com',
-    repos      => 'main',
-    key        => {
-      id=> '47B320EB4C7C375AA9DAE1A01054B7A24BD6EC30',
-      server => 'pgp.mit.edu'
-    }
-  }->
   class { 'puppetserver':
     config => {
       'java_args'     => {
