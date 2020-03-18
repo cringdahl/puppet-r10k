@@ -17,7 +17,7 @@ mod 'puppetlabs/inifile'
 mod 'puppet/puppetboard'
 mod "puppetlabs/vcsrepo"
 mod "puppet/python"
-mod "stahnma/epel"
+mod "puppet/epel"
 
 #mod 'puppet/jenkins', '2.0.0'
 mod 'puppet/nginx'
