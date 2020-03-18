@@ -1,6 +1,6 @@
 ---
 
-profiles::puppetmaster::use_puppetdb: false
+profiles::puppetmaster::use_puppetdb: true
 profiles::puppetmaster::use_puppetboard: false
 
 profiles::puppetmaster::autosign_hosts:

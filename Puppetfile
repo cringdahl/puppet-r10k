@@ -19,4 +19,9 @@ mod "puppetlabs/vcsrepo"
 mod "puppet/python"
 mod "stahnma/epel"
 
+mod 'puppet/jenkins', '2.0.0'
 
+# git source example
+# mod 'camptocamp-nagios', :git => 'https://github.com/camptocamp/puppet-nagios.git'
+
+mod 'puppet/profile_nginx', :git => 'git@github.rackspace.com:TEASandbox/puppet-profile_nginx.git'

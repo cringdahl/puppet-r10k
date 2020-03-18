@@ -1,7 +1,7 @@
 node 'default' {
   include role::agent
 
-  notify { 'Default class for unknown node': }
+  notify { 'Default class for unknown node; define nodes in manifest/nodes.pp': }
 }
 
 node 'puppetmaster' {
@@ -15,3 +15,8 @@ node 'puppetmaster' {
 #node 'puppetreports' {
 #  include role::puppetreports
 #}
+
+node 'websrv' {
+   include jenkins
+   class { 'profile_nginx::reverse_proxy': }
+}
